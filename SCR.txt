@@ -1,0 +1,8 @@
+NXP Software Content Register
+
+Package:                     meta-grayvip.git
+Outgoing License:            LA_OPT_Online_Code_Hosting_License - v1.2 October 2023
+License File:                LICENSE
+Type of Content:             Yocto recipe files
+Description and comments:    Yocto Layer for common components of NXP S32N Vehicle Integration Platforms (GrayVIP)
+Origin:                      NXP
