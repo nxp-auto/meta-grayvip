@@ -1,0 +1,11 @@
+--- a/fdts/s32n79-simulator.dts
++++ b/fdts/s32n79-simulator.dts
+@@ -31,7 +31,7 @@
+ 	status = "okay";
+ };
+ 
+-&ufshc {
++&ufshci0 {
+ 	status = "okay";
+ };
+ 
