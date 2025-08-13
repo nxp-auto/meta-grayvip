@@ -1,0 +1,42 @@
+diff --git a/arch/arm64/boot/dts/freescale/s32n79-simulator.dts b/arch/arm64/boot/dts/freescale/s32n79-simulator.dts
+index 70d3aee6b9ac..eadfbbc7cadb 100644
+--- a/arch/arm64/boot/dts/freescale/s32n79-simulator.dts
++++ b/arch/arm64/boot/dts/freescale/s32n79-simulator.dts
+@@ -65,7 +65,7 @@ &can1 {
+ 	status = "okay";
+ };
+ 
+-&netc_iep14 {
++&netc_iep13 {
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm64/boot/dts/freescale/s32n79.dtsi b/arch/arm64/boot/dts/freescale/s32n79.dtsi
+index 904608ed6e6d..81288630f48d 100644
+--- a/arch/arm64/boot/dts/freescale/s32n79.dtsi
++++ b/arch/arm64/boot/dts/freescale/s32n79.dtsi
+@@ -589,6 +589,24 @@ nwss_subsys {
+ 		ranges = <0x0 0x47800000 0x0 0x47800000 0x0 0x1540000>,
+ 			 <0x2 0x40000000 0x2 0x40000000 0x0 0x20000000>;
+ 
++		netc_iep13: pcie@240d00000 {
++			compatible = "pci-host-ecam-generic";
++			reg = <0x2 0x40d00000 0x0 0x100000>;
++			#address-cells = <3>;
++			#size-cells = <2>;
++			msi-parent = <&its>;
++			device_type = "pci";
++			bus-range = <0x0 0x0>;
++			status = "disabled";
++
++			ranges = /* ENETC4 */
++				 <0x82000000 0x0 0x48980000 0x0 0x48980000 0x0 0x40000>,
++				 /* VSI12-13 */
++				 <0x82000000 0x0 0x48b90000 0x0 0x48b90000 0x0 0x20000>,
++				 /* VSI12-13 MSI-X */
++				 <0x82000000 0x0 0x48c80000 0x0 0x48c80000 0x0 0x20000>;
++		};
++
+ 		netc_iep14: pcie@240e00000 {
+ 			compatible = "pci-host-ecam-generic";
+ 			reg = <0x2 0x40e00000 0x0 0x100000>;
