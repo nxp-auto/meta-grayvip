@@ -1,0 +1,9 @@
+--- a/arch/arm64/boot/dts/freescale/s32n79-simulator.dts	2025-09-05 14:44:10.719769861 +0300
++++ b/arch/arm64/boot/dts/freescale/s32n79-simulator.dts	2025-09-05 14:45:49.192847944 +0300
+@@ -182,5 +182,5 @@
+ };
+ 
+ &xspi0 {
+-	status = "okay";
++	status = "disabled";
+ };
