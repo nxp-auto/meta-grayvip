@@ -1,0 +1,7 @@
+// Copyright 2025 NXP
+// Custom environment for QNX GrayVIP, providing U-Boot commands to boot QNX instead of Linux.
+
+// Include QNX in the boot message from U-Boot
+ufsboot=echo Booting QNX from ufs ...; run ufsargs; if run loadufsfdt; then run fdt_fixups; ${boot_mtd} ${loadaddr} - ${fdt_addr}; fi;
+image="/BOOT/qnx/qnx-ifs.ui"
+boot_mtd=bootm
