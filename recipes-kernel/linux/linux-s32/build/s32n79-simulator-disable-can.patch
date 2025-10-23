@@ -1,19 +1,18 @@
 diff --git a/arch/arm64/boot/dts/freescale/s32n79-simulator.dts b/arch/arm64/boot/dts/freescale/s32n79-simulator.dts
-index 87bd61856740..571c465feebf 100644
+index d6a261935b9d..23b4504eb47e 100644
 --- a/arch/arm64/boot/dts/freescale/s32n79-simulator.dts
 +++ b/arch/arm64/boot/dts/freescale/s32n79-simulator.dts
-@@ -61,14 +61,6 @@ &edma0_rcu {
- 	status = "okay";
+@@ -119,11 +119,11 @@ &edma_rcu {
  };
  
--&can0 {
+ &can0 {
 -	status = "okay";
--};
--
--&can1 {
--	status = "okay";
--};
--
- &netc_iep13 {
- 	status = "okay";
++	status = "disabled";
  };
+ 
+ &can1 {
+-	status = "okay";
++	status = "disabled";
+ };
+ 
+ &can22 {
