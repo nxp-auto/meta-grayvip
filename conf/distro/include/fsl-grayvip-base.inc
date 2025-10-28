@@ -4,5 +4,5 @@ DISTRO_NAME = "GrayVIP"
 DISTRO_VERSION = "${GRAYVIP_RELEASE} (based on Auto Linux BSP ${ALB_RELEASE})"
 
 # Features specific to the GrayVIP distros
-DISTRO_FEATURES:append = " grayvip-disable-nxp-switch grayvip-disable-xspi grayvip-disable-can nxp-eiqa-demos "
+DISTRO_FEATURES:append = " grayvip-disable-nxp-switch grayvip-disable-xspi grayvip-disable-can nxp-eiqa-demos nxp-carv "
 

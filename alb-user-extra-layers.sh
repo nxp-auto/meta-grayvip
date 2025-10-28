@@ -6,4 +6,5 @@ alb_user_extra_layers="\
     meta-vip \
     meta-grayvip \
     meta-eiqa \
+    meta-carv \
 "
