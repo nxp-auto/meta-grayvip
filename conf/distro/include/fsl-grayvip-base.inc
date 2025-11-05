@@ -6,3 +6,5 @@ DISTRO_VERSION = "${GRAYVIP_RELEASE} (based on Auto Linux BSP ${ALB_RELEASE})"
 # Replace UFS Linux Boot Image with QNX Boot Image.
 # Possible values: "true" - Enabled, "false" - Disabled. Default: "false" - Disabled.
 ENABLE_QNX ?= "false"
+
+EXTRA_IMAGEDEPENDS += "${@bb.utils.contains('ENABLE_QNX', 'true', 'qnx', '', d)}"
