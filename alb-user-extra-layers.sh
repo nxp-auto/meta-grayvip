@@ -5,6 +5,7 @@ alb_user_extra_layers="\
     meta-aws \
     meta-vip \
     meta-grayvip \
+    meta-grayvip-dev \
     meta-eiqa \
     meta-carv \
 "
