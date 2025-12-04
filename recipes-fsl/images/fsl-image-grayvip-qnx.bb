@@ -10,3 +10,6 @@ require recipes-fsl/images/fsl-image-grayvip-base.inc
 # Remove standard UFS class and use QNX UFS class
 IMAGE_CLASSES:remove = "image_types_fsl_ufs"
 IMAGE_CLASSES:append = " image_types_fsl_qnx_ufs"
+
+IMAGE_CLASSES:remove = "image_types_fsl_sdcard"
+IMAGE_CLASSES:append = " image_types_fsl_qnx_sdcard"
