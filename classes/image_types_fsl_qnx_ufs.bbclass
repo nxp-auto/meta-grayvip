@@ -4,6 +4,9 @@
 # Inherit the original UFS class
 require classes/image_types_fsl_ufs.bbclass
 
+# Override ESP partition size for QNX builds
+ESP_PARTITION_EXTRA_SPACE_MIB = "28"
+
 # Add dependency on QNX IFS recipe
 do_image_ufs[depends] += "qnx:do_deploy"
 
@@ -39,7 +42,7 @@ generate_nxp_ufs_lun1() {
     # Create partitions
     create_partition ${UFS_LUN1_NAME} ${UFS_SECTOR_SIZE} ${ESP_PARTITION_NAME} ${ESP_PARTITION_SIZE_SECTORS} "fat16"
     parted -s "${UFS_LUN1_NAME}" set 1 esp on
-    create_partition ${UFS_LUN1_NAME} ${UFS_SECTOR_SIZE} ${ROOTFS_PARTITION_NAME} ${ROOTFS_PARTITION_SIZE_SECTORS} "ext4"
+    create_partition ${UFS_LUN1_NAME} ${UFS_SECTOR_SIZE} ${ROOTFS_PARTITION_NAME} ${ROOTFS_PARTITION_SIZE_SECTORS} "${UFS_ROOTFS_EXT}"
 
     # Create QNX boot partition
     bbnote "Creating QNX boot partition..."
