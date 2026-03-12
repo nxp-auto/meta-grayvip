@@ -1,9 +1,10 @@
 NXP Software Content Register
 
 Package:                     meta-grayvip.git
-Version:                     develop
+Version:                     1.0.6.1
 Outgoing License:            LA_OPT_Online Code Hosting NXP_Software_License - v1.4 May 2025
 License File:                LICENSE
 Type of Content:             Yocto recipe files
 Description and comments:    Yocto Layer for common components of NXP S32N Vehicle Integration Platforms (GrayVIP)
+Release Location:            https://github.com/nxp-auto/meta-grayvip
 Origin:                      NXP
