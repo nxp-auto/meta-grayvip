@@ -21,5 +21,7 @@ addtask deploy after do_unpack
 do_deploy() {
     # Copy to deploy directory
     install -d ${DEPLOYDIR}
-    install -m 644 "${WORKDIR}${QNX_IFS_PATH}" ${DEPLOYDIR}/$(basename ${QNX_IFS_PATH})
+    install -m 644 "${WORKDIR}/${QNX_IFS_PATH}" "${DEPLOYDIR}/${QNX_KERNEL_IMAGE}"
+
+    ln -sf ${QNX_KERNEL_IMAGE} "${DEPLOYDIR}/${QNX_KERNEL_IMAGE}-${MACHINE}.bin"
 }
