@@ -1,0 +1,1 @@
+export CYCLONEDDS_URI=/etc/motionwise-communication/configRefApp1_enp0s0f0.xml

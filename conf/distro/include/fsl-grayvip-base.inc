@@ -7,5 +7,12 @@ DISTRO_VERSION = "${GRAYVIP_RELEASE} (based on Auto Linux BSP ${ALB_RELEASE})"
 SDK_VERSION = "${GRAYVIP_RELEASE}"
 
 # Features specific to the GrayVIP distros
-DISTRO_FEATURES:append = " grayvip-disable-nxp-switch grayvip-disable-xspi grayvip-disable-can nxp-eiqa-demos nxp-carv "
+DISTRO_FEATURES:append = " \
+    grayvip-disable-nxp-switch \
+    grayvip-disable-xspi \
+    grayvip-disable-can \
+    nxp-eiqa-demos \
+    nxp-carv \
+    nxp-motionwise \
+"
 

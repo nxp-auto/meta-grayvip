@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io" xmlns:xsi="http://w3.org" xsi:schemaLocation="https://cdds.io https://githubusercontent.com">
+    <Domain Id="any">
+        <General>
+            <Interfaces>
+                <PubSubMessageExchange type="zenoh_pico" library="psmx_zenoh_pico" config="RX_METADATA_REQUIRED=false;MODE=peer;LISTEN=udp/224.0.0.224:7447#iface=enp0s0f0" />
+            </Interfaces>
+        </General>
+    </Domain>
+</CycloneDDS>

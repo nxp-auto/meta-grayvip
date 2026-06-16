@@ -7,4 +7,5 @@ IMAGE_INSTALL:append = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-eiqa-demos', ' packagegroup-eiqa-base ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-ara2', ' packagegroup-ara2 ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-carv', ' carv carv-apps ', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-motionwise', ' motionwise-communication-examples', '', d)} \
 "
