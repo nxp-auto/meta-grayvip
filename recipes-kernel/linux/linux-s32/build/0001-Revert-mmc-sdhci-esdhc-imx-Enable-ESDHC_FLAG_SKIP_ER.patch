@@ -1,0 +1,30 @@
+From 097582365da5d9d7ace3034eb6ecfdc7705de609 Mon Sep 17 00:00:00 2001
+From: Larisa Grigore <larisa.grigore@nxp.com>
+Date: Tue, 30 Jun 2026 10:48:18 +0200
+Subject: [PATCH] Revert "mmc: sdhci-esdhc-imx: Enable
+ ESDHC_FLAG_SKIP_ERR004536 for S32N79"
+
+This reverts commit 7b8036eea8f7590cd037a97a60266ec197df4de1.
+
+Issue: ALBSP-2310
+Signed-off-by: Larisa Grigore <larisa.grigore@nxp.com>
+---
+ drivers/mmc/host/sdhci-esdhc-imx.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/mmc/host/sdhci-esdhc-imx.c b/drivers/mmc/host/sdhci-esdhc-imx.c
+index 7cd4cf23c153..faf3d538d51f 100644
+--- a/drivers/mmc/host/sdhci-esdhc-imx.c
++++ b/drivers/mmc/host/sdhci-esdhc-imx.c
+@@ -328,7 +328,7 @@ static struct esdhc_soc_data usdhc_s32n_data = {
+ 	.flags = ESDHC_FLAG_USDHC | ESDHC_FLAG_MAN_TUNING
+ 			| ESDHC_FLAG_HAVE_CAP1 | ESDHC_FLAG_HS200
+ 			| ESDHC_FLAG_HS400 | ESDHC_FLAG_HS400_ES
+-			| ESDHC_FLAG_SKIP_ERR004536
++			| ESDHC_FLAG_ERR004536
+ 			| ESDHC_FLAG_ERR053438,
+ };
+ 
+-- 
+2.25.1
+
