@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount UFS Logical Volume to /data
+Requires=prepare-ufs.service
+After=prepare-ufs.service
+
+[Mount]
+What=/dev/vg_data/lv_data
+Where=/data
+Type=ext4
+Options=defaults,noatime
+
+[Install]
+WantedBy=multi-user.target

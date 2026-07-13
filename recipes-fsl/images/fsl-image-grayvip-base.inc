@@ -4,8 +4,10 @@ require recipes-fsl/images/fsl-image-vip-base.inc
 
 # Add packages to image
 IMAGE_INSTALL:append = " \
+    lvm2 \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-eiqa-demos', ' packagegroup-eiqa-base ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-ara2', ' packagegroup-ara2 ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-carv', ' carv carv-apps ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-motionwise', ' motionwise-communication-examples', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-ufs-unify', ' nxp-ufs-unify', '', d)} \
 "

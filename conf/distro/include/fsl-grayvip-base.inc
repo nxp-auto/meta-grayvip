@@ -14,5 +14,6 @@ DISTRO_FEATURES:append = " \
     nxp-eiqa-demos \
     nxp-carv \
     nxp-motionwise \
+    nxp-ufs-unify \
 "
 

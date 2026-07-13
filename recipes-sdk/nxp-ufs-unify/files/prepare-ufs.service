@@ -1,0 +1,13 @@
+[Unit]
+Description=Prepare and Format UFS LVM Volume
+DefaultDependencies=no
+After=lvm2-monitor.service
+Before=data.mount
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/nxp-ufs-unify.sh
+
+[Install]
+WantedBy=local-fs.target
