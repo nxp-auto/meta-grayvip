@@ -7,7 +7,10 @@ DELTA_KERNEL_DEFCONFIG:append = " \
 
 SRC_URI:append= " \
     file://grayvip.cfg \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'grayvip-disable-nxp-switch', 'file://s32n79-simulator-no-nxp-switch.patch', '', d)} \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'grayvip-disable-xspi', 'file://s32n79-simulator-disable-xspi.patch', '', d)} \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'grayvip-disable-can', 'file://s32n79-simulator-disable-can.patch', '', d)} \
+"
+
+SRC_URI:append:s32n79sim = " \
+    file://s32n79-simulator-no-nxp-switch.patch \
+    file://s32n79-simulator-disable-xspi.patch \
+    file://s32n79-simulator-disable-can.patch \
 "

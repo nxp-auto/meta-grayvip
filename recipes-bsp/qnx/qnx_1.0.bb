@@ -6,13 +6,9 @@ do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 do_install[noexec] = "1"
 
-python() {
-    if not oe.utils.vartrue('ENABLE_QNX', True, False, d):
-        return
-
-    if (d.getVar('PREFERRED_VERSION_%s' % d.getVar('PN')) or d.getVar('PV')) == d.getVar('PV'):
-        d.appendVar('SRC_URI', f" file://{d.getVar('QNX_IFS_PATH')}")
-}
+SRC_URI:append:fsl-grayvip-qnx = " \
+    ${@f"file://{d.getVar('QNX_IFS_PATH')}" if (d.getVar('PREFERRED_VERSION_%s' % d.getVar('PN')) or d.getVar('PV')) == d.getVar('PV') else ''} \
+"
 
 inherit deploy
 
