@@ -1,7 +1,7 @@
 // Copyright 2026 NXP
 // Custom U-Boot environment for 2-cohorts-AI Linux images.
 
-fdt_fixups=fdt addr ${fdt_addr}; fdt set /pcie@4c000000 status okay; \
-    fdt set /pcie@4c400000 status okay; \
-    fdt set /pcie@4c800000 status okay; \
-    fdt set /pcie@4cc00000 status okay;
+fdt_fixups=fdt addr ${fdt_addr}; fdt set /hscs_subsys/pcie@4c000000 status okay; \
+    fdt set /hscs_subsys/pcie@4c400000 status okay; \
+    fdt set /hscs_subsys/pcie@4c800000 status okay; \
+    fdt set /hscs_subsys/pcie@4cc00000 status okay;
