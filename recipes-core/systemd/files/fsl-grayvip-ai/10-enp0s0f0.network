@@ -1,0 +1,9 @@
+[Match]
+Name=enp0s0f0
+
+[Network]
+Address=192.168.1.3/24
+
+[Route]
+Gateway=192.168.1.1
+GatewayOnLink=yes
