@@ -1,13 +1,14 @@
 [Unit]
 Description=Mount UFS Logical Volume to /data
-Requires=prepare-ufs.service
-After=prepare-ufs.service
+ConditionPathExists=/data
+Requires=prepare-ufs.service dev-mapper-vg_data\x2dlv_data.device
+After=prepare-ufs.service dev-mapper-vg_data\x2dlv_data.device
 
 [Mount]
-What=/dev/vg_data/lv_data
+What=/dev/mapper/vg_data-lv_data
 Where=/data
 Type=ext4
-Options=defaults,noatime
+Options=defaults
 
 [Install]
 WantedBy=multi-user.target

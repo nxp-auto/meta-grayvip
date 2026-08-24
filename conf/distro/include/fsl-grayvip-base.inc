@@ -10,5 +10,4 @@ SDK_VERSION = "${GRAYVIP_RELEASE}"
 DISTRO_FEATURES:append = " \
     nxp-eiqa-demos \
     nxp-carv \
-    nxp-motionwise \
 "

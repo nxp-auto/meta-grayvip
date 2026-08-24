@@ -1,0 +1,65 @@
+APTGET_YOCTO_TRANSLATION += " \
+    libaio1t64:libaio1 \
+    lvm2:lvm2,lvm2-udevrules,lvm2-scripts \
+    libdevmapper1.02.1:libdevmapper \
+    util-linux:util-linux-blkid,util-linux-findmnt,util-linux-lsblk,util-linux-wipefs \
+    libdbus-1-3t64:dbus,dbus-lib \
+    libdbus-1-3:dbus,dbus-lib \
+    libssl3t64:libssl3 \
+    libssl3:libssl3 \
+    libstdc++6:libstdc++ \
+    curl:curl \
+"
+
+APTGET_RPROVIDES += " \
+    lvm2 \
+    libaio1t64 \
+    python3-stringold \
+    python3-datetime \
+    python3-numbers \
+    python3-shell \
+    python3-pickle \
+    python3-json \
+    python3-mime \
+    python3-html \
+    python3-pprint \
+    python3-threading \
+    python3-compression \
+    python3-difflib \
+    python3-xml \
+    python3-compile \
+    python3-image \
+    python3-mmap \
+    python3-plistlib \
+    python3-debugger \
+    python3-audio \
+    python3-codecs \
+    python3-db \
+    python3-curses \
+    python3-zoneinfo \
+    python3-sqlite3 \
+    python3-profile \
+    python3-resource \
+    python3-tomllib \
+    python3-math \
+    python3-crypt \
+    python3-email \
+    python3-io \
+    python3-netclient \
+    python3-ctypes \
+    python3-netserver \
+    python3-logging \
+    python3-pydoc \
+    python3-misc \
+    python3-venv \
+    python3-multiprocessing \
+    python3-xmlrpc \
+    python3-asyncio \
+    python3-unittest \
+    python3-doctest \
+    python3-unixadmin \
+    python3-mailbox \
+    python3-terminal \
+    python3-statistics \
+    ldconfig \
+"

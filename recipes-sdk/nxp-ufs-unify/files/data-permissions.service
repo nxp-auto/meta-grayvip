@@ -1,0 +1,12 @@
+[Unit]
+Description=Set Global Permissions for /data
+Requires=data.mount
+After=data.mount
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/chmod 777 /data
+
+[Install]
+WantedBy=multi-user.target

@@ -8,11 +8,12 @@ RDEPENDS:${PN} = "lvm2 e2fsprogs util-linux-wipefs util-linux-blkid udev"
 inherit systemd
 
 SYSTEMD_PACKAGES = "${PN}"
-SYSTEMD_SERVICE:${PN} = "prepare-ufs.service data.mount"
+SYSTEMD_SERVICE:${PN} = "prepare-ufs.service data-permissions.service data.mount"
 
 SRC_URI = " \
     file://nxp-ufs-unify.sh \
     file://prepare-ufs.service \
+    file://data-permissions.service \
     file://data.mount \
 "
 
@@ -24,11 +25,15 @@ do_install() {
 
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/prepare-ufs.service ${D}${systemd_system_unitdir}/
+    install -m 0644 ${WORKDIR}/data-permissions.service ${D}${systemd_system_unitdir}/
     install -m 0644 ${WORKDIR}/data.mount ${D}${systemd_system_unitdir}/
+    install -d -m 0777 ${D}/data
 }
 
 FILES:${PN} = " \
     ${bindir}/nxp-ufs-unify.sh \
     ${systemd_system_unitdir}/prepare-ufs.service \
+    ${systemd_system_unitdir}/data-permissions.service \
     ${systemd_system_unitdir}/data.mount \
+    /data \
 "
