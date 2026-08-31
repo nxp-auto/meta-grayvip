@@ -6,8 +6,11 @@ require recipes-fsl/images/fsl-image-ubuntu-base.bb
 APTGET_EXTRA_PACKAGES:append = " \
     lvm2 \
     curl \
+    nvme-cli \
     python3-pip \
     openssh-server \
+    pciutils \
+    devmem2 \
 "
 
 # Add packages to image

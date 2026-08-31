@@ -9,10 +9,18 @@ APTGET_YOCTO_TRANSLATION += " \
     libssl3:libssl3 \
     libstdc++6:libstdc++ \
     curl:curl \
+    nvme-cli:nvme-cli \
+    pciutils:pciutils \
+    devmem2:devmem2 \
 "
 
 APTGET_RPROVIDES += " \
     lvm2 \
+    curl \
+    nvme-cli \
+    openssh-server \
+    pciutils \
+    devmem2 \
     libaio1t64 \
     python3-stringold \
     python3-datetime \
