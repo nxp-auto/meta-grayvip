@@ -45,17 +45,17 @@ for dev in /sys/block/sd*; do
                 echo "[WARNING] Could not determine SCSI address for /dev/$name. Skipping."
                 continue
             fi
-            
+
             # Isolate the SCSI address string and extract the 4th element (Hardware LUN ID)
             scsi_addr=$(basename "$scsi_target")
             lun=$(echo "$scsi_addr" | awk -F: '{print $4}')
-            
+
             if [ -z "$lun" ]; then
                 echo "[WARNING] Could not parse LUN from address: $scsi_addr. Skipping."
                 continue
             fi
-            
-            if [ "$lun" -eq 0 ] || [ "$lun" -eq 1 ] 2>/dev/null; then
+
+            if [ "$lun" -eq 0 ] || [ "$lun" -eq 1 ] || [ "$lun" -eq 24 ] || [ "$lun" -eq 25 ] || [ "$lun" -eq 16 ] || [ "$lun" -eq 17 ] 2>/dev/null; then
                 echo "[INFO] System protection: Skipping /dev/$name (Hardware LUN: $lun)"
                 continue
             fi
