@@ -1,3 +1,5 @@
+# Copyright 2026 NXP
+
 APTGET_YOCTO_TRANSLATION += " \
     libaio1t64:libaio1 \
     lvm2:lvm2,lvm2-udevrules,lvm2-scripts \
@@ -70,4 +72,9 @@ APTGET_RPROVIDES += " \
     python3-terminal \
     python3-statistics \
     ldconfig \
+"
+
+# Ubuntu 22.04-specific packages
+APTGET_RPROVIDES += " \
+    ${@oe.utils.conditional('UBUNTU_TARGET_BASEVERSION', '22.04', ' python3-2to3 python3-idle ', '', d)} \
 "
