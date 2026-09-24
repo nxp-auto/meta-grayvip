@@ -15,10 +15,12 @@ APTGET_EXTRA_PACKAGES:append = " \
 
 # Add packages to image
 IMAGE_INSTALL:append = " \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-eiqa-demos', ' packagegroup-eiqa-base ', '', d)} \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-ara2', ' packagegroup-ara2 ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-carv', ' carv carv-apps ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'nxp-motionwise', ' motionwise-communication-examples', '', d)} \
+    ${@oe.utils.conditional('UBUNTU_TARGET_BASEVERSION', '22.04', '', \
+        bb.utils.contains('DISTRO_FEATURES', 'nxp-eiqa-demos', ' packagegroup-eiqa-base ', '', d) + \
+        bb.utils.contains('DISTRO_FEATURES', 'nxp-ara2', ' packagegroup-ara2 ', '', d), \
+        d)} \
 "
 
 IMAGE_INSTALL:append:fsl-grayvip-ai = " \
