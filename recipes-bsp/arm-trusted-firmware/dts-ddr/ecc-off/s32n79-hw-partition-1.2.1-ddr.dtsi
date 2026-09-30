@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
+/*
+ * Copyright 2026 NXP
+ *
+ * DDR interleaved (ddr_intrlv) configuration.
+ * Collapses the two 15GB SMMS regions into a single 30GB interleaved
+ * region on ddr_high0. ddr_high1 is retained as a label-only placeholder
+ * (no device_type/reg) so existing &ddr_high1 phandle references still
+ * resolve, while the ATF fconf /memory parser skips it (it only walks
+ * nodes with device_type = "memory").
+ */
+
+/ {
+	memory@800000000 {
+		device_type = "memory";
+		reg = <0x0 0x80000000 0x0 0x80000000>; /* 2GB */
+	};
+
+	ddr_high0: memory@8800000000 {
+		device_type = "memory";
+		reg = <0x88 0x00000000 0x7 0x80000000>; /* 30GB - 40-bit space: SMMS0+SMMS1 interleaved */
+	};
+
+	ddr_high1: ddr-high1-placeholder {
+		/* Interleaved into ddr_high0; kept only as a phandle target. */
+	};
+};
