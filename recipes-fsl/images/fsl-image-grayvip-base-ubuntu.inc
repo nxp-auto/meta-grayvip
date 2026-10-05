@@ -24,6 +24,7 @@ IMAGE_INSTALL:append = " \
 "
 
 IMAGE_INSTALL:append:fsl-grayvip-ai = " \
+    systemd-conf \
     nxp-ufs-unify \
 "
 
